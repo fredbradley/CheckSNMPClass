@@ -3,7 +3,7 @@
 /**
  * Cranleigh SNMP Check Wrapper Class
  *
- * @version 1.1 (14-Apr-2017)
+ * @version 1.1.1 (14-Apr-2017)
  *
  * @author Fred Bradley <frb@cranleigh.org>
  * @link http://www.fredbradley.uk Fred Bradley

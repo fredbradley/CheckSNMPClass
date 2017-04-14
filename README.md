@@ -1,5 +1,5 @@
 # CheckSNMPClass
-Version 1.1
+Version 1.1.1
 
 A custom wrapper class is used to display information about [our](https://github.com/cranleighschool) UPS's on our [Nagdash](https://github.com/lozzd/Nagdash) board.
 
@@ -21,6 +21,9 @@ If you have any questions, please feel free to add an Issue. If you'd like to su
 
 ## Changelog
 
-### 1.1
+### 1.1.1
+Add Check Command Script to Examples folder
+
+### 1.1.0
 Published on GitHub
 
