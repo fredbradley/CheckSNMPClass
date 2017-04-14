@@ -7,6 +7,7 @@
  *
  * @author Fred Bradley <frb@cranleigh.org>
  * @link http://www.fredbradley.uk Fred Bradley
+ * @link https://github.com/fredbradley/CheckSNMPClass GitHub Repo
  * @example example/example_ups.php How to use the class
  */
 
