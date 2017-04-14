@@ -1,4 +1,6 @@
 # CheckSNMPClass
+Version 1.1
+
 A custom wrapper class is used to display information about [our](https://github.com/cranleighschool) UPS's on our [Nagdash](https://github.com/lozzd/Nagdash) board.
 
 ## Description
@@ -17,4 +19,7 @@ However bare in mind this display is modified with CSS which is not covered in t
 ## Questions
 If you have any questions, please feel free to add an Issue. If you'd like to suggest an enhancement please submit a pull request. 
 
-Thanks
+## Changelog
+### 1.1
+Published on GitHub
+
