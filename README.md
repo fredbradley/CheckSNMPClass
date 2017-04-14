@@ -20,6 +20,7 @@ However bare in mind this display is modified with CSS which is not covered in t
 If you have any questions, please feel free to add an Issue. If you'd like to suggest an enhancement please submit a pull request. 
 
 ## Changelog
-### 1.1
+
+### 1.1
 Published on GitHub
 
