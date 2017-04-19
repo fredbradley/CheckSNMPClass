@@ -1,5 +1,5 @@
 # CheckSNMPClass
-Version 1.1.1
+Version 1.1.2
 
 A custom wrapper class is used to display information about [our](https://github.com/cranleighschool) UPS's on our [Nagdash](https://github.com/lozzd/Nagdash) board.
 
@@ -20,6 +20,9 @@ However bare in mind this display is modified with CSS which is not covered in t
 If you have any questions, please feel free to add an Issue. If you'd like to suggest an enhancement please submit a pull request. 
 
 ## Changelog
+
+### 1.1.2
+Added more precise runtime display
 
 ### 1.1.1
 Add Check Command Script to Examples folder

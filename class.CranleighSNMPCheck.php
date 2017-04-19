@@ -3,10 +3,11 @@
 /**
  * Cranleigh SNMP Check Wrapper Class
  *
- * @version 1.1.1 (14-Apr-2017)
+ * @version 1.1.2 (14-Apr-2017)
  *
  * @author Fred Bradley <frb@cranleigh.org>
  * @link http://www.fredbradley.uk Fred Bradley
+ * @link https://github.com/fredbradley/CheckSNMPClass GitHub Repo
  * @example example/example_ups.php How to use the class
  */
 
@@ -143,7 +144,9 @@ class CranleighSNMPCheck
      */
     public function displayBlock()
     {
-        if (($this->load_percent > 60) or ($this->getRuntimeInMinutes() < 30)) {
+	   // var_dump($this->getBatterySNMP());
+	    
+        if (($this->load_percent > 70) or ($this->getRuntimeInMinutes() < 30)) {
             $this->setNagiosState(1);
         } else {
             $this->setNagiosState(0);
@@ -257,6 +260,10 @@ class CranleighSNMPCheck
      */
     private function tidyString($string)
     {
+	    $string = trim($string);
+	    $string = strip_tags($string);
+	    $string = trim($string, "\n");
+	    $string = trim($string, "\r");
 
         return trim($string);
     }
@@ -294,14 +301,35 @@ class CranleighSNMPCheck
         $pos = stripos($battery, $check);
 
         $string = substr($battery, $pos+$strlen);
-        $pos = stripos($string, ",");
-
-        $string = trim(substr($string, 0, $pos));
-        $parts = explode(" ", trim($string));
+        $string_parts = explode(",", $string);
+        $mainUnit = trim($string_parts[0]);
+        $secondUnit = $this->simplifySecondUnit($string_parts[1]);
+        
+        $parts = explode(" ", trim($mainUnit));
         $this->runtime = $parts[0];
         $this->runtimeUnit = $this->convertTime($parts[1]);
-
-        return "Runtime:<br />".$parts[0]." ".$this->convertTime($parts[1]);
+        
+        if ($this->runtimeUnit == "Mins") {
+	        $outputSecondUnit = null;
+        } else {
+	        $outputSecondUnit = $secondUnit." Mins";
+        }
+	
+        return "Runtime:<br />".$parts[0]." ".$this->convertTime($parts[1])." ".$outputSecondUnit;
+    }
+    
+    
+    /**
+     * simplifySecondUnit function.
+     * 
+     * @access private
+     * @param string $secondUnit
+     * @return float
+     */
+    private function simplifySecondUnit($secondUnit) {
+	    $string = explode(":", $this->tidyString($secondUnit));
+	    
+	    return round($string[0]);
     }
 
     /**
