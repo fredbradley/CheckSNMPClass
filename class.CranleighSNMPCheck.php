@@ -345,7 +345,7 @@ class CranleighSNMPCheck
         if ($this->runtimeUnit==="Mins") {
             return $this->runtime;
         }
-        if ($this->runtimeUnit==="Hour") {
+        if ($this->runtimeUnit==="Hour" || $this->runtimeUnit==="Hours") {
             return $this->runtime * 60;
         }
         return "0";
